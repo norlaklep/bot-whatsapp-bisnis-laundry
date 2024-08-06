@@ -1,26 +1,40 @@
 const { Controller, Response } = require("pepesan");
 const f = require("../utils/Formatter");
 
+let activeUsers = {};
+
 module.exports = class BotController extends Controller {
-
-
     async introduction(request) {
-      return Response.menu.fromArrayOfString(
-        [
-          f("menu.daftarProduk"),
-          f("menu.alamatKantor")
-        ],
-        f("intro", [request.name]),
-        f("template.menu")
-      );
+        return Response.menu.fromArrayOfString(
+            [
+                f("menu.Mabar"),
+                f("menu.keperluan"),
+                f("menu.chatBiasa")
+            ],
+            f("intro", [request.name]),
+            f("template.menu")
+        );
     }
 
-    async product(request) {
-      return this.reply("Ini produk digital saya, bisa dikunjungi di http://dewakoding.com")
+    async Mabar(request) {
+        return this.reply("Gas Mabar");
     }
 
-    async alamatKantor(request) {
-      return this.reply("Bang udah bang")
+    async keperluan(request) {
+        activeUsers[request.sender] = false;
+        return this.reply("Silakan jelaskan keperluan Anda.");
     }
 
+    async chatBiasa(request) {
+        activeUsers[request.sender] = false;
+        return this.reply("Chatbot dinonaktifkan untuk chat biasa.");
+    }
+
+    static async checkActive(request) {
+        if (activeUsers[request.sender] === false) {
+            return false;
+        }
+        return true;
+
+    }
 }

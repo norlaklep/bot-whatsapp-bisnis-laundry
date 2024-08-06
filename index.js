@@ -5,7 +5,7 @@ const { ALLOWED_NUMBERS } = process.env;
 
 (async () => {
     const config = {
-        allowedNumbers:["6282217456798","6282293292842"],
+        allowedNumbers:[],
         browserName: 'Dewakoding App',
         sessionPath: './example/session',
         db: {
@@ -16,4 +16,4 @@ const { ALLOWED_NUMBERS } = process.env;
     }
     const pepesan = Pepesan.init(router, config)
     await pepesan.connect()
-})()
+})()    

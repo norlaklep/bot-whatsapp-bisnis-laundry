@@ -1,6 +1,8 @@
 {
-    "intro": "Selamat datang",
+    "intro": "Selamat datang, Pilih opsi:",
     "template.menu": "Ketik angka *{{number}}* : untuk *{{menu}}*",
-    "menu.daftarProduk": "🧰 Daftar Produk",
-    "menu.alamatKantor": "Alamat Kantor"
+    "menu.Mabar": "Mabar",
+    "menu.keperluan": "Keperluan",
+    "menu.chatBiasa": "Chat Biasa"
+    
 }
