@@ -20,3 +20,6 @@ npm install
 ```
 npm run dev
 ```
+
+
+Penjelasan yang kurang baik, 1/10 -newbie
