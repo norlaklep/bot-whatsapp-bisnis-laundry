@@ -9,7 +9,8 @@ module.exports = class BotController extends Controller {
             [
                 f("menu.Mabar"),
                 f("menu.keperluan"),
-                f("menu.chatBiasa")
+                f("menu.chatBiasa"),
+                f("menu.fkb")
             ],
             f("intro", [request.name]),
             f("template.menu")
@@ -29,6 +30,7 @@ module.exports = class BotController extends Controller {
         activeUsers[request.sender] = false;
         return this.reply("Chatbot dinonaktifkan untuk chat biasa.");
     }
+
 
     static async checkActive(request) {
         if (activeUsers[request.sender] === false) {
