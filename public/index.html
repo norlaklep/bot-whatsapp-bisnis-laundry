@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Output</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #000;
+            color: #0f0;
+            padding: 20px;
+        }
+        #output {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terminal Output</h1>
+    <div id="output"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const output = document.getElementById('output');
+
+        socket.on('terminalOutput', (data) => {
+            output.textContent += data;
+        });
+    </script>
+</body>
+</html>
