@@ -5,7 +5,7 @@ const { ALLOWED_NUMBERS } = process.env;
 
 (async () => {
     const config = {
-        allowedNumbers:[""],
+        allowedNumbers: null,
         browserName: 'Dewakoding App',
         sessionPath: './example/session',
         db: {
